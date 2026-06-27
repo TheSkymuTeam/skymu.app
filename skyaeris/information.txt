@@ -1,0 +1,276 @@
+
+  █████████  █████                                               ███            
+ ███░░░░░███░░███                                               ░░░             
+░███    ░░░  ░███ █████ █████ ████  ██████    ██████  ████████  ████   █████    
+░░█████████  ░███░░███ ░░███ ░███  ░░░░░███  ███░░███░░███░░███░░███  ███░░     
+ ░░░░░░░░███ ░██████░   ░███ ░███   ███████ ░███████  ░███ ░░░  ░███ ░░█████    
+ ███    ░███ ░███░░███  ░███ ░███  ███░░███ ░███░░░   ░███      ░███  ░░░░███   
+░░█████████  ████ █████ ░░███████ ░░████████░░██████  █████     █████ ██████    
+ ░░░░░░░░░  ░░░░ ░░░░░   ░░░░░███  ░░░░░░░░  ░░░░░░  ░░░░░     ░░░░░ ░░░░░░     
+                         ███ ░███                                               
+                        ░░██████                                                
+                         ░░░░░░                                                 
+
+
+░▀█▀░█▀█░▀█▀░█▀▄░█▀█░█▀▄░█░█░█▀▀░▀█▀░▀█▀░█▀█░█▀█
+░░█░░█░█░░█░░█▀▄░█░█░█░█░█░█░█░░░░█░░░█░░█░█░█░█
+░▀▀▀░▀░▀░░▀░░▀░▀░▀▀▀░▀▀░░▀▀▀░▀▀▀░░▀░░▀▀▀░▀▀▀░▀░▀
+
+Hello. This is OmegaAOL, creator of the Skyæris archive, and the guy who patched all the Skype versions here. If you're interested in Skype, you should check out Skymu at https://skymu.app. This archive contains two types of Skype versions: "classic Skype" (Skype 1, 2, 3, 4, 5, 6, and 7) and "electron Skype" (Skype 8). 
+
+Classic Skype currently only works through offline sessions and can't actually connect to any servers, however you can do very cool things with it like importing your entire old Skype contact and message history; you will find out how to do this later in the document. By the way, while classic Skype works on Windows 2000/XP and up, these instructions will only really work for Windows Vista SP2 and up because "import.cmd" needs PowerShell to run its backend script.
+
+Electron Skype directly connects to Microsoft Teams' servers and uses the Teams service (which shares a lot in common with Skype), so it's usable as a standard messaging client. Calls work, too! However, while Skype 8.131 works perfectly, Skype 8.95 is a bit broken, and Skype 8.56 is pretty much unusable.
+
+Increase the width of your text editor if the ASCII header isn't rendering properly. Also, an updated version of this guide can be found at https://skymu.app/skyaeris/information. That's about it, enjoy reading!
+
+░█▀▀░█▀▄░█▀▀░█▀▄░▀█▀░▀█▀░█▀▀
+░█░░░█▀▄░█▀▀░█░█░░█░░░█░░▀▀█
+░▀▀▀░▀░▀░▀▀▀░▀▀░░▀▀▀░░▀░░▀▀▀
+
+I would like to credit the following developers for their roles in making this happen. This would not be possible without them, especially the anonymous developer who does not want to be named at present.
+
+Complete consent has been obtained from the anonymous developer and Ryder to both credit them and publish this work, which was made with their assistance.
+
+- Anonymous developer: for helping me generate Credentials2 by giving me access
+to his supernode recreation server.
+- Ryder: assistance with patching
+
+Credits also go to epicness for hosting the deobfuscated Skype versions in one place so that I didn't have to scour obscure forums for them.
+
+░▀█▀░█▄█░█▀█░█▀█░█▀▄░▀█▀░█▀█░█▀█░▀█▀░░░█░█░█▀█░█▀▄░█▀█░▀█▀░█▀█░█▀▀
+░░█░░█░█░█▀▀░█░█░█▀▄░░█░░█▀█░█░█░░█░░░░█▄█░█▀█░█▀▄░█░█░░█░░█░█░█░█
+░▀▀▀░▀░▀░▀░░░▀▀▀░▀░▀░░▀░░▀░▀░▀░▀░░▀░░░░▀░▀░▀░▀░▀░▀░▀░▀░▀▀▀░▀░▀░▀▀▀
+
+If you've used Skype on this computer before, running the below script may erase your old Skype data; make a backup of %AppData%\Skype beforehand. OmegaAOL, The Skymu Team, or any of the developers credited do not assume liability if you delete your Skype data despite having read this warning.
+
+░█░█░█▀█░█▀█░█░█░█▀█░░░▀█▀░█▀▀░█▀▀░█░█░█▀▀░█▀▀
+░█▀▄░█░█░█░█░█▄█░█░█░░░░█░░▀▀█░▀▀█░█░█░█▀▀░▀▀█
+░▀░▀░▀░▀░▀▀▀░▀░▀░▀░▀░░░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀
+
+- Skype 1.4 does not work because it does not trigger auto-login for some reason.
+- Skype 7.31 does not even open.
+- Sometimes login fails for Skype 8 due to using a hardcoded Teams TENANT_ID which may be blocked in certain regions. 
+
+░█░█░█▀▀░▀█▀░█▀█░█▀▀░░░█▀▀░█░█░█░█░█▀█░█▀▀░░░▀█░░░░░░░░░░▀▀█
+░█░█░▀▀█░░█░░█░█░█░█░░░▀▀█░█▀▄░░█░░█▀▀░█▀▀░░░░█░░░░▄▄▄░░░▄▀░
+░▀▀▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░░░▀▀▀░▀░▀░░▀░░▀░░░▀▀▀░░░▀▀▀░░░░░░░░░▀░░
+
+Note: You don't have to do any of this for Skype 8, which can be used by just clicking the EXE and logging in normally. These instructions are just for the offline sessions, so only follow them if you're using Skype 1 to 7.
+
+Open the 'Offline Session' folder and run 'import.cmd'. (If Skype still doesn't work after this, run it as an administrator instead). Afterwards, just launch any version of Skype. If it stops working after some time (as is expected when version hopping), simply run `import.cmd` again. For further detail on what you can do with these offline sessions, keep reading.
+
+░█░█░▀█▀░█▀▀░█░█░░░█░█░█▀█░█░█░█▀▄░░░█▀█░█░░░█▀▄░░░█▀▀░█░█░█░█░█▀█░█▀▀░░░█▄█░█▀▀░█▀▀░█▀▀░█▀█░█▀▀░█▀▀░█▀▀
+░▀▄▀░░█░░█▀▀░█▄█░░░░█░░█░█░█░█░█▀▄░░░█░█░█░░░█░█░░░▀▀█░█▀▄░░█░░█▀▀░█▀▀░░░█░█░█▀▀░▀▀█░▀▀█░█▀█░█░█░█▀▀░▀▀█
+░░▀░░▀▀▀░▀▀▀░▀░▀░░░░▀░░▀▀▀░▀▀▀░▀░▀░░░▀▀▀░▀▀▀░▀▀░░░░▀▀▀░▀░▀░░▀░░▀░░░▀▀▀░░░▀░▀░▀▀▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀▀▀░▀▀▀
+
+For future reference, "%APPDATA%" is an environment variable. Just paste the path containing that variable in the File Explorer address bar to navigate to the folder.
+
+If you have an old computer on which you used Skype from 2003 - 2019, there is a good chance that you have a Skype database located at "%AppData%\Skype\your skype name\main.db" (or wherever you backed up that folder to after reading the "IMPORTANT WARNING" section.) This file contains your entire Skype contact list, conversations (DMs and group chats), file transfer history, and message history. To use that database with Skype, retrieve main.db and follow these steps.
+
+Addditionally, if you want to see your Discord/Matrix/etc chats in Skype (version 4 and above), download Skymu (https://skymu.app), log in, click on the conversations whose message history you want to make appear in Skype, close Skymu, copy %AppData%\Skymu\...\...\main.db somewhere safe, and follow the below steps.
+
+- Go to https://sqlable.com/sqlite, or https://extendsclass.com/sqlite-browser.html if the first link doesn't work
+- Click on "Database file" -> "Open DB File" and select your main.db
+- Paste this code in the big box in the middle, including the semicolon: UPDATE accounts SET skypename = 'skypetest';
+- Click "Run" and then click "Database file" -> "Save DB File"
+- Rename the downloaded file from "file.sqli" to "main.db"
+- Make a copy of your edited main.db and keep it somewhere safe, as you will likely need to redo the following steps if you switch between Skype versions.
+- Move your edited main.db to %AppData%\Skype\skypetest on whatever machine you're currently running Skype on.
+- Launch Skype version 4 or later and enjoy. If you want to view your contact and conversation lists on Skype 3 and below, you must FIRST launch Skype 4.2 and then close it and launch any of these older versions. Sadly. message history does not seem to work on Skype 3 and below.
+- Every time you run import.cmd again, you will have to repeat this step; it will come in handy to save a copy of your edited main.db as mentioned above.
+
+░█▄█░█▀█░█▀█░█░█░█▀█░█░░░█░░░█░█░░░█▀█░█▀█░▀█▀░█▀▀░█░█░▀█▀░█▀█░█▀▀░░░█▀▀░█░█░█░█░█▀█░█▀▀░░░▀█░░░░░░░░░░▀▀█
+░█░█░█▀█░█░█░█░█░█▀█░█░░░█░░░░█░░░░█▀▀░█▀█░░█░░█░░░█▀█░░█░░█░█░█░█░░░▀▀█░█▀▄░░█░░█▀▀░█▀▀░░░░█░░░░▄▄▄░░░▄▀░
+░▀░▀░▀░▀░▀░▀░▀▀▀░▀░▀░▀▀▀░▀▀▀░░▀░░░░▀░░░▀░▀░░▀░░▀▀▀░▀░▀░▀▀▀░▀░▀░▀▀▀░░░▀▀▀░▀░▀░░▀░░▀░░░▀▀▀░░░▀▀▀░░░░░░░░░▀░░
+
+Credit goes to Ryder for these instructions. You do NOT need to follow these unless you want to patch an unpached, deobfuscated Skype version or you just want to patch the application yourself for some reason. All the Skype executables in this archive come pre-patched already.
+
+Using a hex editor like HxD, search for these and replace them with the following.
+- In Skype 6 and above, you will be patching skylib.dll / SkypeSkylib.dll. In Skype 5 and below you will be patching Skype.exe directly as skylib is embedded in the binary.
+- You will find these in hex for Skype 5 and above, and in ASCII (decoded text pane in HxD) for Skype 4 and below. To switch between where to paste (hex or decoded text) in HxD, use [TAB].
+
+Search for...
+
+b8506aeed8ed30fe1c0e6774874b59206a77329042a49be2403da47d50052441067f87bcd57e6579b83df0bade2beff5b5cd8d87e8b3edac5f57fabccd49695974e2b5e5f0287d6c19ecc31b4504a9f8be25da78fa4ef345f91d339b73cc2d70b3904e11ca570ce9b5dc4b08b3c44b74dc463587ea637ef4456e61462b72042fc2f4ad5510a9850c06dc9a7374412fcadda955bd9800f9754cb3b8cc62d0e98d8282180971055b457c06f351e61164fc5a9de9d83d1d1378964001380b5b99ee4c5c7d50ac2462a4b7ea34fd32d90bd8d4b46410263673f900d1c60470165df9f3cb48016ab8ca45ce6875a71d977915ca8251b50258748dbc37fe332edc2855
+
+...and replace it with
+
+d4924573b62f38addc654896241cf693a1397842d6e3a81b8e971f0c5ac54bb42e647997d7a31745e092e9eab69548e7ff514de053818a12dc070fdf02bd5e4db4c6cd282645cda7719074e09de53bb0421c39eda38d61861b60f171a00203b2fe2d1e092cf9d9e6bc8e85b63391fafa9419f43ec5c3235fe8951fb17426143e47cd5067efa62a49c546422691f772162f9855dae46675c0cfbb49bffc34598dc907d19d84e9b7b1db8d9b87de27b9cb054caefd44e3d2e0e8012c5d7d8ef721ba609d779c2c43a1b6283e8e0c828976e87ccb3e9be55dc9e7a1a5917169957003496e71113ca63fd64cc0f6758ffee10f3d1139df8ff34680a66af1c074f96d
+
+Search for...
+
+a8f223612f4f5fc81ef1ca5e310b0b21532a72df6c1af0fbec87304aec983aab5d74a14cc72e53ef7752a248c0e5abe09484b597692015e796350989c88b3cae140ca82ccd9914e540468cf0edb35dcba4c352890e7a9eafac550b3978627651ad0a804f385ef5f4093ac6ee66b23e1f8202c61c6c0375eeb713852397ced2e199492aa61a3eab163d4c2625c873e95cafd95b80dd2d8732c8e25638a2007acfa6c8f1ff31cc2bc4ca8f4446f51da404335a48c955aaa3a4b57250d7ba29700b
+
+...and replace it with
+
+a6625de859135e0a19b9b3ea9ff717a3d30f8ebe9b40aa5b34b75aaae023b51da3de1025a23d73c29163c04becd24e24b0d8523d2df152fa71efb3e3c7687938c94df0b62d69efc0e3786103eefa565116bcaa66d760ef89cee3f2d9e0e85822712bda434d8b61dd1cc1ee15dda85c1fe056b602f0fd96d1d9f9a0aa494b074fc54fb2e4ee48a70b737077eb626a71486c9f1b0f0eeb50cef9a9bed01a96aa5ed3f802bfe3a3af442871695be4893acbfc644a301b74e96ad70244fffaef1a5d
+
+░█▄█░█▀█░█▀█░█░█░█▀█░█░░░█░░░█░█░░░█▀█░█▀█░▀█▀░█▀▀░█░█░▀█▀░█▀█░█▀▀░░░█▀▀░█░█░█░█░█▀█░█▀▀░░░▄▀▄
+░█░█░█▀█░█░█░█░█░█▀█░█░░░█░░░░█░░░░█▀▀░█▀█░░█░░█░░░█▀█░░█░░█░█░█░█░░░▀▀█░█▀▄░░█░░█▀▀░█▀▀░░░▄▀▄
+░▀░▀░▀░▀░▀░▀░▀▀▀░▀░▀░▀▀▀░▀▀▀░░▀░░░░▀░░░▀░▀░░▀░░▀▀▀░▀░▀░▀▀▀░▀░▀░▀▀▀░░░▀▀▀░▀░▀░░▀░░▀░░░▀▀▀░░░░▀░
+
+You do NOT need to follow these unless you want to patch a previously unpatched version of Skype 8 / Skype for Web or you just want to patch the application yourself for some reason. All the Skype executables in this archive come pre-patched already.
+
+Skype Electron Patching Guide April 2025 by OmegaAOL
+
+Step 1: add skymu.app to the trusted lists in Index.html
+Step 2: go to js/app.js and replace config.edge.skype.com and config.edge.skype.net with skymu.app/ecs
+Step 3: add these new functions in place of the existing versions in js/app.js (you may need to modify the function signature / references to variables out of scope depending on the age of the skype version you are patching):
+
+getSignInAuthorizeUri() {
+    return "https://login.microsoftonline.com/consumers/oauth2/v2.0/authorize"
+}
+
+_handleMsaNavigation(e, t) {
+    const i = e.toLocaleLowerCase();
+    if (-1 !== i.indexOf(B.msaFinalUrlPath)) {
+        const urlObj = new URL(e);
+        const queryParams = Object.fromEntries(urlObj.searchParams.entries());
+        const t = x.default.getUrlParamsInFragment(e) || {};
+        if (t.access_token) {
+            p.log(h.LogTraceArea.SISU, "[MSAOAuth] oauth20_desktop.srf tokens received"),
+            this._hasReceivedToken = !0,
+            this.props.msaAccountPayload && !this._refreshTokenFailed && this.props.onMsaRefreshTokenAutoRefreshed && this.props.onMsaRefreshTokenAutoRefreshed(this.props.msaAccountPayload);
+            const e = this._getMsaWebViewTokenPath(),
+            i = Date.now() - this._initialStartTime;
+            this.props.onMsaFlowCompleted(t.access_token, t.refresh_token, e, i, this.props.msaAccountPayload)
+        } else if (queryParams["code"]) {
+            p.log(h.LogTraceArea.SISU, "[MSAOAuth] Teams code received");
+            const TENANT_ID = "9188040d-6c67-4c5b-b112-36a304b66dad";
+            fetch("https://login.microsoftonline.com/consumers/oauth2/v2.0/token", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded;charset=utf-8",
+                    "Accept": "*/*",
+                    "Origin": "https://teams.live.com",
+                    "Referer": "https://teams.live.com/"
+                },
+                body: new URLSearchParams({
+                    client_id: "00000000480BC46C",
+                    redirect_uri: "https://login.live.com/oauth20_desktop.srf",
+                    scope: "openId profile openid offline_access",
+                    code: queryParams["code"],
+                    grant_type: "authorization_code",
+                    code_verifier: "allhailseankypewhichisbetterthanskymu51234567890ABCDEfghijk",
+                    client_info: "1",
+                    "x-client-SKU": "msal.js.browser",
+                    "x-client-VER": "3.30.0"
+                }).toString()
+            })
+            .then(r => r.json())
+            .then(data => {
+                p.log(h.LogTraceArea.SISU, "[MSAOAuth] Teams initial token received, exchanging for scoped token");
+                return fetch(`https://login.microsoftonline.com/${TENANT_ID}/oauth2/v2.0/token`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded;charset=utf-8",
+                        "Accept": "*/*",
+                        "Origin": "https://teams.live.com",
+                        "Referer": "https://teams.live.com/"
+                    },
+                    body: new URLSearchParams({
+                        client_id: "00000000480BC46C",
+                        scope: "service::api.fl.spaces.skype.com::MBI_SSL openid profile offline_access",
+                        grant_type: "refresh_token",
+                        client_info: "1",
+                        "x-client-SKU": "msal.js.browser",
+                        "x-client-VER": "3.30.0",
+                        "x-ms-lib-capability": "retry-after, h429",
+                        refresh_token: data.refresh_token
+                    }).toString()
+                });
+            })
+            .then(r => r.json())
+            .then(data => {
+                p.log(h.LogTraceArea.SISU, "[MSAOAuth] Teams scoped token received");
+                if (this.props.onMsaFlowCompleted) {
+                    const token = data.access_token,
+                    refresh = data.refresh_token,
+                    e = this._getMsaWebViewTokenPath(),
+                    i = Date.now() - this._initialStartTime;
+                    this.props.onMsaFlowCompleted(token, refresh, e, i, this.props.msaAccountPayload);
+                }
+            })
+            .catch(err => {
+                p.log(h.LogTraceArea.SISU, "[MSAOAuth] Teams token exchange failed", err);
+                if (this.props.onMsaOAuthError) {
+                    this.props.onMsaOAuthError({
+                        errorName: "token_exchange_failed",
+                        errorDescription: err.message
+                    }, this.props.msaAccountPayload);
+                }
+            });
+        } else if (t.error) {
+            p.log(h.LogTraceArea.SISU, "[MSAOAuth] oauth20_desktop.srf errored out");
+            const t = x.default.getUrlParamsInFragment(e) || {};
+            if (this.props.onMsaOAuthError) {
+                const e = {
+                    errorName: t.error || "",
+                    errorDescription: t.error_description || ""
+                };
+                this.props.isPreloadEnabled && (this._webViewId++, this._isWebViewVisible = !1, this._initialLoad = !0, this._currentPage = this.props.useMsaCreateAccountFlow ? O.SignUpPage : O.SignInPage),
+                this.props.onMsaOAuthError(e, this.props.msaAccountPayload)
+            }
+        } else
+            p.error(h.LogTraceArea.SISU, "[MSAOAuth] Landed on oauth20_desktop.srf but did not get a token or error?!")
+    } else  - 1 !== i.indexOf(B.msaLogoutUrlPath) ? (this._refreshTokenFailed = !0, this.props.msaAccountPayload && (this.props.onMsaRefreshTokenUserSwitched && this.props.onMsaRefreshTokenUserSwitched(this.props.msaAccountPayload), this._webViewId++), this.isComponentMounted() && this.setState({
+                userLoggedOut: !0
+            })) : -1 !== i.indexOf(B.msaInteractiveAuthorizeUrlPath) && (!this.props.msaAccountPayload || this._hasReceivedToken || this._refreshTokenFailed || t || (this._refreshTokenFailed = !0, this.props.onMsaRefreshTokenInterrupted && this.props.onMsaRefreshTokenInterrupted(this.props.msaAccountPayload)));
+    n.find(B, (e => -1 !== i.indexOf(e))) || p.warn(h.LogTraceArea.SISU, "[MSAOAuth] Landed on an unexpected URL:", o.pii.Omit(e))
+}
+
+getSkypeAuthInfoFromRPSAccessToken(e) {
+    const i = {
+        retries: 5,
+        timeout: 3e5,
+        priority: s.WebRequestPriority.Critical,
+        authTelemetry: new c.default("RpsClient", l.ScenarioName.LoginAuth, {
+            scenario: "teamsAuth",
+            service: "RpsClient"
+        }),
+        excludeEndpointUrl: true,
+        augmentHeaders: {
+            authorization: `Bearer ${e}`,
+            "ms-teams-authz-type": "ExplicitLogin",
+            "x-ms-client-type": "web",
+            "x-ms-client-version": "1415/26022706352",
+            "clientrequestid": `Core-${crypto.randomUUID()}`,
+            "x-ms-request-id": `Core-${crypto.randomUUID()}`,
+            "claimschallengecapable": "true"
+        }
+    };
+    i.authTelemetry.begin();
+    i.withCredentials = true;
+    return this.performApiPostDetailed(
+        "https://teams.live.com/api/auth/v1.0/authz/consumer",
+        null,
+        i).then((e => {
+            const t = e.body;
+            if (!t || !t.skypeToken) {
+                const t = {
+                    statusCode: e.statusCode || "",
+                    statusText: e.statusText || ""
+                };
+                return i.authTelemetry.failed("Invalid response", t),
+                o.Rejected(e)
+            }
+            i.authTelemetry.succeeded();
+            const token = t.skypeToken;
+            return {
+                skypeId: token.skypeid,
+                skypeToken: new u.default(
+                    token.skypetoken,
+                    Date.now() + 1000 * token.expiresIn),
+                signinName: token.signinname,
+                anid: null
+            }
+        }))
+}
+
+this._signInMSAParameters = {
+    scope: this.scopes,
+    response_type: "code",
+    code_challenge: "J75M-oj0HAC_0BoDw-RJnzldP4ocOm_o2_QY9crc04Q",
+    code_challenge_method: "S256"
+};
