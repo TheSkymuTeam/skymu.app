@@ -4,12 +4,9 @@
 
 .wiki-container {
 	background: white;
-
 	margin: 0 auto 20px auto;
 	padding: 20px;
-	width: 900px;
-	border: 1px solid #5f99cf;
-	border-radius: 7px;
+	width: 70%;
 	font-family: arial, helvetica, sans-serif;
 }
 
