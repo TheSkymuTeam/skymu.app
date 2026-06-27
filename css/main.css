@@ -16,11 +16,18 @@ body {
     min-height: 100%;
     }
 
-    #wrap {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px 30px;
-    }
+	
+	#wrap {
+	margin: 0 auto;
+    padding: 20px 30px;
+	max-width: 900px;
+	/* IE11 fixes below */
+    width: 100%;             
+    align-self: center;     
+    margin-left: auto;
+    margin-right: auto;
+	flex: 1 0 auto;
+}
 
     /* nav */
     #topnav {
@@ -114,7 +121,18 @@ a:active { color: red; }
       background: #eee;
       border: 1px solid #ccc;
       padding: 18px 30px;
+	  display: block;
       margin: 0;
+    }
+	
+	/* IE11 fixes */
+	/* this is separate because if applied globally it breaks Netscape */
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        #searchbar {
+            display: table;
+            width: 100%;
+            box-sizing: border-box;
+        }
     }
 
     #searchbar-inner {
@@ -203,6 +221,9 @@ a:active { color: red; }
       color: #fff;
       padding: 12px 30px;
       text-align: center;
+	  /* IE11 fixes below */
+	  flex-shrink: 0;          
+      margin-top: auto;      
     }
 
     #copyright {
@@ -218,3 +239,7 @@ a:active { color: red; }
     #copyright a {
       color: #00AFF0;
     }
+	
+
+
+
