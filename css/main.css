@@ -1,251 +1,260 @@
- html, body {
-    height: 100%;
-}   
+html,
+body {
+	height: 100%;
+}
 
 body {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 16px;
-      line-height: 1.6;
-      color: #333;
-      background: #f9f9f9;
-      margin: 0;
-      padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	line-height: 1.6;
+	color: #333;
+	background: #f9f9f9;
+	margin: 0;
+	padding: 0;
 	padding-top: 36px;
-    display: flex;
-    flex-direction: column;
-    min-height: 100%;
-    }
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
 
-	
-	#wrap {
+
+#wrap {
 	margin: 0 auto;
-    padding: 20px 30px;
+	padding: 20px 30px;
 	max-width: 900px;
 	/* IE11 fixes below */
-    width: 100%;             
-    align-self: center;     
-    margin-left: auto;
-    margin-right: auto;
+	width: 100%;
+	align-self: center;
+	margin-left: auto;
+	margin-right: auto;
 	flex: 1 0 auto;
 }
 
-    /* nav */
-    #topnav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: #222 url(../images/header.png) repeat-x;
-    height: 36px;
-    z-index: 1000;
+/* nav */
+#topnav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: #222 url(../images/header.png) repeat-x;
+	height: 36px;
+	z-index: 1000;
 }
 
-a:link { color: #00AFF0; }
-a:visited { color: purple; }
-a:hover { color: blue; }
-a:active { color: red; }
+a:link {
+	color: #00AFF0;
+}
+
+a:visited {
+	color: purple;
+}
+
+a:hover {
+	color: blue;
+}
+
+a:active {
+	color: red;
+}
 
 #logo {
-    position: absolute;
-    left: 15px;
-    top: 2px;  
-    z-index: 100;
+	position: absolute;
+	left: 15px;
+	top: 2px;
+	z-index: 100;
 }
 
 #logo img {
-    display: block;
-    border: 0;
+	display: block;
+	border: 0;
 }
 
 #topnav-inner {
-    padding: 0 0 0 150px;
+	padding: 0 0 0 150px;
 }
 
 #topnav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+	margin: 0;
+	padding: 0;
+	list-style: none;
 }
 
 #topnav li {
-    display: inline;
+	display: inline;
 }
 
 #topnav li a {
-    display: inline-block;
-    height: 36px;
-    line-height: 36px;
-    padding: 0 14px;
-    font-size: 13px;
-    color: #fff;
-    text-decoration: none;
+	display: inline-block;
+	height: 36px;
+	line-height: 36px;
+	padding: 0 14px;
+	font-size: 13px;
+	color: #fff;
+	text-decoration: none;
 }
 
 #topnav li a:hover {
-    color: #66ccff;
+	color: #66ccff;
 }
 
-    /* hero */
-    #hero {
-      background: #00AFF0;
-      color: #fff;
-      padding: 40px 30px;
-      text-align: center;
-    }
-
-    #hero-inner {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    #hero h1 {
-      font-size: 32px;
-      margin: 0 0 12px 0;
-      font-weight: bold;
-    }
-
-    #hero p {
-      font-size: 17px;
-      margin: 0 0 24px 0;
-    }
-	
-	#hero img {
-    display: block;
-    margin: 20px auto 20px auto;
-    max-width: 100%;
+/* hero */
+#hero {
+	background: #00AFF0;
+	color: #fff;
+	padding: 40px 30px;
+	text-align: center;
 }
 
-    .hero-button {
-	  height: 40px;
-	  width: 200px;
-	  font-size: 14px;
-	  vertical-align: middle;	
+#hero-inner {
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+#hero h1 {
+	font-size: 32px;
+	margin: 0 0 12px 0;
+	font-weight: bold;
+}
+
+#hero p {
+	font-size: 17px;
+	margin: 0 0 24px 0;
+}
+
+#hero img {
+	display: block;
+	margin: 20px auto 20px auto;
+	max-width: 100%;
+}
+
+.hero-button {
+	height: 40px;
+	width: 200px;
+	font-size: 14px;
+	vertical-align: middle;
+}
+
+/* searchbar */
+#searchbar {
+	background: #eee;
+	border: 1px solid #ccc;
+	padding: 18px 30px;
+	display: block;
+	margin: 0;
+}
+
+/* IE11 fixes */
+/* this is separate because if applied globally it breaks Netscape */
+@media all and (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+	#searchbar {
+		display: table;
+		width: 100%;
+		box-sizing: border-box;
 	}
-	
-    /* searchbar */
-    #searchbar {
-      background: #eee;
-      border: 1px solid #ccc;
-      padding: 18px 30px;
-	  display: block;
-      margin: 0;
-    }
-	
-	/* IE11 fixes */
-	/* this is separate because if applied globally it breaks Netscape */
-	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-        #searchbar {
-            display: table;
-            width: 100%;
-            box-sizing: border-box;
-        }
-    }
+}
 
-    #searchbar-inner {
-      max-width: 900px;
-      margin: 0 auto;
-    }
+#searchbar-inner {
+	max-width: 900px;
+	margin: 0 auto;
+}
 
-    #searchbar h3 {
-      margin: 0 0 8px 0;
-      font-size: 16px;
-    }
+#searchbar h3 {
+	margin: 0 0 8px 0;
+	font-size: 16px;
+}
 
-    #searchbar form {
-      margin: 0;
-    }
-	
-	.directory-textbox {
-	  height: 23px;
-      width: 280px;
-	  vertical-align: middle;
-    }
-	
-	.directory-button {
-	  height: 30px;
-	  margin-left: 10px;
-	  width: 150px;
-	  font-size: 12px;
-	  vertical-align: middle;
-    }
+#searchbar form {
+	margin: 0;
+}
 
-    h2 {
-      font-size: 22px;
-      color: #444;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 4px;
-      margin-top: 36px;
-    }
+.directory-textbox {
+	height: 23px;
+	width: 280px;
+	vertical-align: middle;
+}
 
-    h3 {
-      font-size: 18px;
-      color: #444;
-      margin: 0 0 6px 0;
-    }
+.directory-button {
+	height: 30px;
+	margin-left: 10px;
+	width: 150px;
+	font-size: 12px;
+	vertical-align: middle;
+}
 
-    .features {
-      margin: 20px 0;
-    }
+h2 {
+	font-size: 22px;
+	color: #444;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 4px;
+	margin-top: 36px;
+}
 
-    .feature-block {
-      margin-bottom: 28px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid #eee;
-    }
+h3 {
+	font-size: 18px;
+	color: #444;
+	margin: 0 0 6px 0;
+}
 
-    .feature-block h3 a {
-      color: #00AFF0;
-      text-decoration: none;
-    }
+.features {
+	margin: 20px 0;
+}
 
-    .feature-block h3 a:hover {
-      text-decoration: underline;
-    }
+.feature-block {
+	margin-bottom: 28px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #eee;
+}
 
-    .feature-block p {
-      margin: 4px 0 0 0;
-    }
+.feature-block h3 a {
+	color: #00AFF0;
+	text-decoration: none;
+}
 
-    .notice {
-      background: #fff8dc;
-      border: 1px solid #e0c040;
-      padding: 12px 18px;
-      margin: 24px 0;
-      font-size: 14px;
-    }
+.feature-block h3 a:hover {
+	text-decoration: underline;
+}
 
-    .tuts {
-      margin: 8px 0 20px 0;
-    }
+.feature-block p {
+	margin: 4px 0 0 0;
+}
 
-    .tuts li {
-      margin-bottom: 6px;
-    }
+.notice {
+	background: #fff8dc;
+	border: 1px solid #e0c040;
+	padding: 12px 18px;
+	margin: 24px 0;
+	font-size: 14px;
+}
 
-    #footer {
-      background: #00AFF0;
-      color: #fff;
-      padding: 12px 30px;
-      text-align: center;
-	  /* IE11 fixes below */
-	  flex-shrink: 0;          
-      margin-top: auto;      
-    }
+.tuts {
+	margin: 8px 0 20px 0;
+}
 
-    #copyright {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 14px 0;
-      font-size: 12px;
-      color: #555;
-      text-align: center;
-      line-height: 1.7;
-    }
+.tuts li {
+	margin-bottom: 6px;
+}
 
-    #copyright a {
-      color: #00AFF0;
-    }
-	
+#footer {
+	background: #00AFF0;
+	color: #fff;
+	padding: 12px 30px;
+	text-align: center;
+	/* IE11 fixes below */
+	flex-shrink: 0;
+	margin-top: auto;
+}
 
+#copyright {
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 14px 0;
+	font-size: 12px;
+	color: #555;
+	text-align: center;
+	line-height: 1.7;
+}
 
-
+#copyright a {
+	color: #00AFF0;
+}

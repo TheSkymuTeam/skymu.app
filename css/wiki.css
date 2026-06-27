@@ -1,48 +1,48 @@
 #wiki-content {
-    flex: 1;
+	flex: 1;
 }
 
 .wiki-container {
-    background: white;
+	background: white;
 
-    margin: 0 auto 20px auto; 
-    padding: 20px;
-    width:  900px;
-    border: 1px solid #5f99cf;
-    border-radius: 7px;
-    font-family: arial, helvetica, sans-serif;
+	margin: 0 auto 20px auto;
+	padding: 20px;
+	width: 900px;
+	border: 1px solid #5f99cf;
+	border-radius: 7px;
+	font-family: arial, helvetica, sans-serif;
 }
 
 .wiki-container h1 {
-    font-size: 32px;
-    color: #009fd9;
-    margin: 0 0 12px 0;
-    padding-top: 5px;
+	font-size: 32px;
+	color: #009fd9;
+	margin: 0 0 12px 0;
+	padding-top: 5px;
 }
 
 .wiki-container h2 {
-    font-size: 24px;
-    color: #333;
-    margin: 20px 0 10px 0;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 4px;
+	font-size: 24px;
+	color: #333;
+	margin: 20px 0 10px 0;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 4px;
 }
 
 .wiki-container h3 {
-    font-size: 20px;
-    color: #444;
-    margin: 0;
+	font-size: 20px;
+	color: #444;
+	margin: 0;
 }
 
 .wiki-container ul {
-    line-height: 1.6;
+	line-height: 1.6;
 }
 
 .wiki-container a {
-    color: #009fd9;
-    text-decoration: none;
+	color: #009fd9;
+	text-decoration: none;
 }
 
 .wiki-container a:hover {
-    text-decoration: underline;
+	text-decoration: underline;
 }
