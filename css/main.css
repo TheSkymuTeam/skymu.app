@@ -35,7 +35,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background: #333;
+    background: #222 url(../images/header.png) repeat-x;
     height: 36px;
     z-index: 1000;
 }
