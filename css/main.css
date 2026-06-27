@@ -236,13 +236,28 @@ h3 {
 }
 
 #footer {
-	background: #00AFF0;
-	color: #fff;
-	padding: 12px 30px;
-	text-align: center;
-	/* IE11 fixes below */
-	flex-shrink: 0;
-	margin-top: auto;
+   background: #00AFF0;
+   color: #fff;
+   padding: 12px 20%;
+   display: table;
+   width: 100%;
+   box-sizing: border-box;
+   flex-shrink: 0;
+   margin-top: auto;
+}
+#footer strong {
+   display: table-cell;
+   vertical-align: middle;
+}
+#footer-badges {
+   display: table-cell;
+   text-align: right;
+   vertical-align: middle;
+}
+#footer-badges img {
+   border: 0;
+   margin: 0 5px;
+   vertical-align: middle;
 }
 
 #copyright {
