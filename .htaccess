@@ -33,6 +33,7 @@ RewriteRule ^ecs/config/v1/[^/]+/[^/]+$ /ecs/8.200.0.1147.json [L]
 
 # Misc. previous URLs
 RewriteRule ^skypehome/.*$ /home [R=301,L]
+RewriteRule ^rewrite/?$ [R=301,L]
 
 # HTTP error redirects
 ErrorDocument 400 /error.php

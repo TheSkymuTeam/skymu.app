@@ -1,4 +1,8 @@
-    body {
+ html, body {
+    height: 100%;
+}   
+
+body {
       font-family: Arial, Helvetica, sans-serif;
       font-size: 16px;
       line-height: 1.6;
@@ -6,6 +10,10 @@
       background: #f9f9f9;
       margin: 0;
       padding: 0;
+	padding-top: 36px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
     }
 
     #wrap {
@@ -16,38 +24,59 @@
 
     /* nav */
     #topnav {
-      background: #00AFF0;
-      padding: 0;
-    }
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #333;
+    height: 36px;
+    z-index: 1000;
+}
 
-    #topnav-inner {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 30px;
-    }
+a:link { color: #00AFF0; }
+a:visited { color: purple; }
+a:hover { color: blue; }
+a:active { color: red; }
 
-    #topnav ul {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
+#logo {
+    position: absolute;
+    left: 15px;
+    top: 2px;  
+    z-index: 100;
+}
 
-    #topnav li {
-      display: inline;
-    }
+#logo img {
+    display: block;
+    border: 0;
+}
 
-    #topnav li a {
-      display: inline-block;
-      color: #fff;
-      text-decoration: none;
-      padding: 10px 14px;
-      font-size: 14px;
-      font-weight: bold;
-    }
+#topnav-inner {
+    padding: 0 0 0 150px;
+}
 
-    #topnav li a:hover {
-      background: #0099cc;
-    }
+#topnav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#topnav li {
+    display: inline;
+}
+
+#topnav li a {
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 14px;
+    font-size: 13px;
+    color: #fff;
+    text-decoration: none;
+}
+
+#topnav li a:hover {
+    color: #66ccff;
+}
 
     /* hero */
     #hero {
@@ -73,21 +102,13 @@
       margin: 0 0 24px 0;
     }
 
-    #hero a.btn {
-      display: inline-block;
-      background: #fff;
-      color: #00AFF0;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 10px 24px;
-      border: 2px solid #fff;
-      font-size: 15px;
-    }
-
-    #hero a.btn:hover {
-      background: #e0f5ff;
-    }
-
+    .hero-button {
+	  height: 40px;
+	  width: 200px;
+	  font-size: 14px;
+	  vertical-align: middle;	
+	}
+	
     /* searchbar */
     #searchbar {
       background: #eee;
@@ -109,24 +130,24 @@
     #searchbar form {
       margin: 0;
     }
-
-    #searchbar input[type="text"] {
-      font-size: 15px;
-      padding: 6px 10px;
+	
+	.directory-textbox {
+	  height: 23px;
       width: 280px;
-      border: 1px solid #aaa;
+	  vertical-align: middle;
     }
-
-    #searchbar input[type="submit"] {
-      font-size: 15px;
-      padding: 6px 16px;
-      margin-left: 6px;
-      cursor: pointer;
+	
+	.directory-button {
+	  height: 30px;
+	  margin-left: 10px;
+	  width: 150px;
+	  font-size: 12px;
+	  vertical-align: middle;
     }
 
     h2 {
       font-size: 22px;
-      color: #00AFF0;
+      color: #444;
       border-bottom: 1px solid #ddd;
       padding-bottom: 4px;
       margin-top: 36px;
@@ -181,25 +202,7 @@
       background: #00AFF0;
       color: #fff;
       padding: 12px 30px;
-      margin-top: 40px;
       text-align: center;
-    }
-
-    #footer-links {
-      background: #333;
-      padding: 10px 30px;
-      text-align: center;
-      font-size: 13px;
-    }
-
-    #footer-links a {
-      color: #aad4ff;
-      margin: 0 8px;
-      text-decoration: none;
-    }
-
-    #footer-links a:hover {
-      text-decoration: underline;
     }
 
     #copyright {
