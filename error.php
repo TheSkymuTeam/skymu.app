@@ -24,7 +24,6 @@ $statuses = [
 if (isset($statuses[$code])) {
     [$title, $message] = $statuses[$code];
 } else {
-    // Generic fallback based on status class
     $group = (int) floor($code / 100);
 
     switch ($group) {
