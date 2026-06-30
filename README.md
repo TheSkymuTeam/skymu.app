@@ -1,12 +1,10 @@
 # skymu.app
 
-This repository holds our website, as seen at https://www.skymu.app. A major rewrite of the entire site has recently been completed. The website's creator/copyright holder is OmegaAOL and it is licensed under the Affero General Public License, version 3 or later.
-
-The files in this repository are mirrored on https://theskymuteam.github.io/skymu.app/. Note that as this is statically hosted and GitHub ignores .htaccess rules, it will not have the same level of functionality as the official site. Any non-open source files hosted on skymu.app are separate from the website and intentionally excluded from this repository. 
+This repository holds our website, as seen at https://www.skymu.app. A major rewrite of the entire site has recently been completed. The website's creator/copyright holder is OmegaAOL and it is licensed under the Affero General Public License, version 3 or later. Any non-open source files hosted on skymu.app are separate from the website and intentionally excluded from this repository. 
 
 [Here is a list](LICENSE-LIB.md) of third-party software used in this website. Copyright notices and licenses are preserved.
 
-<img width="1511" height="1042" alt="Skydmu - Mozilla Firefox_b1" src="https://github.com/user-attachments/assets/a8b8bfba-1eec-429b-a739-bd0a0b69239e"/>
+<img width="1511" height="1042" alt="Skymu Website" src="https://github.com/user-attachments/assets/a8b8bfba-1eec-429b-a739-bd0a0b69239e"/>
 
 ## Browser compatibility
 * Google Chrome 1.0 and above.
