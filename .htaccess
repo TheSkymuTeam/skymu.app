@@ -7,33 +7,41 @@ RewriteCond %{HTTP_HOST} !^localhost [NC]
 RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
 
 # Shortlinks
-RewriteRule ^zap(/.*)?$ $1 [R=301,L]
-RewriteRule ^(discord|dc|refund-my-fucking-nitro-you-fucks)/?$ https://discord.gg/kKpeKrzWbr [R=301,L]
-RewriteRule ^(github|repository|r|repo|gh)/?$ https://github.com/TheSkymuTeam/Skymu [R=301,L]
-# RewriteRule ^(kofi|donate|k|kf|dn|chest)/?$ https://ko-fi.com/skymu [R=302,L]
-RewriteRule ^(kofi|donate|k|kf|dn|chest)/?$ /wiki/donations [R=302,L]
-RewriteRule ^(d|dl|download|get|g)/?$ https://github.com/TheSkymuTeam/Skymu/releases/latest/download/Skymu.Installer.exe [R=301,L]
-RewriteRule ^(n|nightly|based)/?$ https://nightly.link/TheSkymuTeam/Skymu/workflows/ci-build/master/beta-build.zip [R=301,L]
-RewriteRule ^(c|contact|email|talk|e|t)/?$ mailto:contact@skymu.app [R=301,L]
-RewriteRule ^(directory|userlist|users)/?$ https://skymu.kier.ovh/users [R=301,L]
-RewriteRule ^(skyaeris)/?$ https://archive.org/details/skyaeris [R=301,L]
-RewriteRule ^(omega)/?$ https://omegaaol.github.io [R=301,L]
+RewriteRule ^wiki(/.*)?$ $1 [R=301,L]
+RewriteRule ^(d|discord)/?$ https://discord.gg/kKpeKrzWbr [R=301,L]
+RewriteRule ^(r|repo|repository|gh|github)/?$ https://github.com/TheSkymuTeam/Skymu [R=301,L]
+RewriteRule ^(dn|donate|kofi|chest)/?$ /donations [R=301,L]
+RewriteRule ^(d|download|get|windows)/?$ https://github.com/TheSkymuTeam/Skymu/releases/latest/download/Skymu.Installer.exe [R=301,L]
+RewriteRule ^(b|beta|nightly|based)/?$ https://nightly.link/TheSkymuTeam/Skymu/workflows/ci-build/master/beta-build.zip [R=301,L]
+RewriteRule ^(c|contact)/?$ /contact [R=301,L]
+RewriteRule ^(u|users|directory)/?$ https://skymu.kier.ovh/users [R=301,L]
+RewriteRule ^(sa|skyaeris)/?$ https://archive.org/details/skyaeris [R=301,L]
+RewriteRule ^(o|omega)/?$ https://omegaaol.github.io [R=301,L]
 
-# Legal
-RewriteRule ^legal/AGPLv3/?$ /legal/license [R=301,L]
-RewriteRule ^legal/licenses/[^/]+\.txt/?$ /legal/license [R=301,L]
-RewriteRule ^legal/license\.txt/?$ /legal/license [R=301,L]
-RewriteRule ^legal/exceptions/?$ /legal/license [R=301,L]
-RewriteRule ^legal/exceptions/[^/]+\.txt/?$ /legal/license [R=301,L]
-RewriteRule ^legal/license/?$ /wiki/license [L]
-RewriteRule ^legal/privacy/?$ /wiki/privacy [L]
+# Old legal
+RewriteRule ^legal/AGPLv3/?$ /license [R=301,L]
+RewriteRule ^legal/licenses/[^/]+\.txt/?$ /license [R=301,L]
+RewriteRule ^legal/license\.txt/?$ /license [R=301,L]
+RewriteRule ^legal/exceptions/?$ /license [R=301,L]
+RewriteRule ^legal/exceptions/[^/]+\.txt/?$ /license [R=301,L]
+RewriteRule ^legal/license/?$ /license [L]
+RewriteRule ^legal/privacy/?$ /privacy [L]
 
 # Skype endpoints
 RewriteRule ^ecs/config/v1/[^/]+/[^/]+$ /ecs/8.200.0.1147.json [L]
 
 # Misc. previous URLs
 RewriteRule ^skypehome/.*$ /home [R=301,L]
-RewriteRule ^rewrite/?$ [R=301,L]
+RewriteRule ^rewrite/?$ / [R=301,L]
+RewriteRule ^skyaeris/information\.txt/?$ https://archive.org/details/skyaeris [R=301,L]
+
+# Don't rewrite existing files or directories
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Everything else goes to the router
+RewriteRule ^ router.php [L,QSA]
 
 # HTTP error redirects
 ErrorDocument 400 /error.php
@@ -49,5 +57,3 @@ ErrorDocument 501 /error.php
 ErrorDocument 502 /error.php
 ErrorDocument 503 /error.php
 ErrorDocument 504 /error.php
-
-RewriteRule ^test500$ - [R=501,L]

@@ -1,0 +1,6 @@
+{
+    "require": {
+        "twig/twig": "^3.27",
+        "league/commonmark": "^2.8"
+    }
+}

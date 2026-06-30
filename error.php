@@ -55,7 +55,7 @@ http_response_code($code);
 <head>
     <title><?= htmlspecialchars("$code - $title") ?></title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/css/maintenance.css">
+    <link rel="stylesheet" href="/css/error.css">
 </head>
 <body>
     <div id="header">

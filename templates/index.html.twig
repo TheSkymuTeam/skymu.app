@@ -1,0 +1,82 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+Skymu
+{% endblock %}
+
+{% block content %}
+   
+      <!-- hero -->
+      <div id="hero">
+         <div id="hero-inner">
+            <h1>Skype, reimagined for the modern era. Meet Skymu.</h1>
+            <img src="images/client.png" alt="Screenshot of Skymu">
+            <p>It looks just like the classic program you love, but connects to all the new platforms your friends are on.</p>
+            <button type="button" class="hero-button" onclick="location.href='download';">
+            Download for Windows
+            </button>
+         </div>
+      </div>
+      <!-- user directory search -->
+      <div id="searchbar">
+         <div id="searchbar-inner">
+            <h3>Search for other people on Skymu</h3>
+            <p>Skymu connects to multiple popular messaging platforms. Search through a list of everybody connected to Skymu, on any platform, at any given time.</p>
+            <form class="searchbox-form" action="directory" method="get" accept-charset="UTF-8">
+               <input class="directory-textbox" type="text" name="username" maxlength="100" value="">
+               <input class="directory-button" type="submit" value="Search the directory">
+            </form>
+         </div>
+      </div>
+      <!-- main -->
+      <div id="wrap">
+         <h2>So what <i>does</i> Skymu support, anyway?</h2>
+         <div class="features">
+		    <div class="feature-block">
+               <h3><a href="wiki/features#messaging">Instant messaging</a></h3>
+               <p>The pinnacle of text-based communication. Like Pidgin, Skymu supports multiple different messaging services in the form of protocol plugins. Unlike Pidgin, our plugin architecture was built from the ground up for modern protocols, with native support for message editing and deletion, server and channel structures, reply threading, asynchronous tasks, and modern authentication flows. Discord, Matrix, Tox, and Chat Completions are officially supported at this time.</p>
+            </div>
+			<div class="feature-block">
+               <h3><a href="wiki/features#messaging">Skype themes</a></h3>
+               <p>As you can likely tell, we are enthusiasts with a great appreciation for the style of classic Skype. Many similiar projects pick a single theme and run with it, but not Skymu: our client can be styled after three different eras of Skype (4, 5, and 6) with extreme care and precision given to the accuracy of the theme. An expiremental Skype 7 theme is also being tested out.</p>
+            </div>
+            <div class="feature-block">
+               <h3><a href="wiki/features#voice">Voice calling</a></h3>
+               <p>A feature that gained Skype 300 million active users. The same plugins that connect Skymu to a specific service for messaging also do so with calling, something not supported by any multiprotocol client until now. You can chat up and call your Discord friends using Skymu's Discord plugin and have the entire experience look and work exactly like Skype did in the early 2010s.</p>
+            </div>
+			<div class="feature-block">
+               <h3><a href="wiki/features#windows">Windows XP and Vista</a></h3>
+               <p>Steve Jobs' father told him that a great carpenter finishes the back of a cabinet beautifully, even though barely anyone will see it: the craftsman will always know it is there. In the same spirit, Skymu was made to be a native Windows program, not a web-based or Electron app, and is compatible with Windows Vista and above - but this wasn't quite enough for us, so we made a wrapper that allows Skymu to run on Windows XP SP3 (the minimum OS version of Skype 4.0+), fully functional.</p> 
+            </div>
+            <div class="feature-block">
+               <h3><a href="wiki/features#compatibility">Backwards compatiblity</a></h3>
+               <p>Skymu doesn't just look like Skype. It also acts like Skype (no, Microsoft, this does not mean we reverse engineered the program). You can import your Skymu message database into Skype message history reader tools, or even Skype itself, because they use the same format. You can use Skype language files to localize Skymu, because they use the same format. You can swap configuration files between Skype and Skymu, because they use the same format. You get the point.</p> 
+            </div>
+         </div>
+         <h2>I'm impressed. Anything else I should know?</h2>
+         <div class="features">
+            <div class="feature-block">
+               <h3><a href="wiki/features#call-phones-bt">Calling phone numbers</a></h3>
+               <p>Also called SkypeOut, this is probably the most famous feature of Skype and is the top priority on our long-term roadmap. It would be odd if we didn't plan to add something similiar, right? We plan to bake support for Vonage, Google Voice, and other SIP servers into the application.</p>
+            </div>
+            <div class="feature-block">
+               <h3><a href="discord">Join the community</a></h3>
+               <p>Skymu has a decently sized community, with more than 1,000 members on Discord. As Skymu is open-source software, many members of the community are also contributors to Skymu - if not to the code, then to ideas, testing, and design. We welcome anyone who  enjoys Skymu, wants to learn about it, is thinking about adding a feature, or just wants to talk with some friendly people. Join by clicking the title of this section or the Discord link in the header.</p>
+            </div>
+            <div class="feature-block">
+               <h3><a href="repository">Fully open-source</a></h3>
+               <p>The Skymu application, plugins, API, additional compoents, and even this very website are completely open-source, licensed under the AGPLv3. Anyone can contribute to the source code and improve Skymu; yes, even you!</p>
+            </div>
+         </div>
+         <h2>Getting started</h2>
+         <ul class="tuts">
+            <li><a href="tutorials/setup">How to start using Skymu</a></li>
+            <li><a href="tutorials/calling">How to make voice and video calls</a></li>
+            <li><a href="tutorials/account">How to synchronize your account</a></li>
+         </ul>
+         <div class="notice">
+            <strong>No VoIP calls with Skymu.</strong> Unlike Skype, Skymu does not support virtual phone numbers or domestic/international calling.
+         </div>
+      </div>
+	  
+{% endblock %}
