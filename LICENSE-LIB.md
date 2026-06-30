@@ -35,10 +35,6 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ## League/CommonMark
 
-Copyright (c) Colin O'Dell
-
-BSD 3-Clause License
-
 Copyright (c) 2014-2022, Colin O'Dell. All rights reserved. Some code based on commonmark.js (copyright 2014-2018, John MacFarlane) and commonmark-java (copyright 2015-2016, Atlassian Pty Ltd)
 
 Redistribution and use in source and binary forms, with or without
