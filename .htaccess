@@ -26,8 +26,8 @@ RewriteRule ^legal/licenses/[^/]+\.txt/?$ /license [R=301,L]
 RewriteRule ^legal/license\.txt/?$ /license [R=301,L]
 RewriteRule ^legal/exceptions/?$ /license [R=301,L]
 RewriteRule ^legal/exceptions/[^/]+\.txt/?$ /license [R=301,L]
-RewriteRule ^legal/license/?$ /license [L]
-RewriteRule ^legal/privacy/?$ /privacy [L]
+RewriteRule ^legal/license/?$ /license [R=301,L]
+RewriteRule ^legal/privacy/?$ /privacy [R=301,L]
 
 # Skype endpoints
 RewriteRule ^ecs/config/v1/[^/]+/[^/]+$ /ecs/8.200.0.1147.json [L]
