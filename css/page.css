@@ -1,8 +1,8 @@
-#wiki-content {
+#page-content {
 	flex: 1;
 }
 
-.wiki-container {
+.page-container {
 	background: white;
 	margin: 0 auto 20px auto;
 	padding: 20px;
@@ -10,14 +10,14 @@
 	font-family: arial, helvetica, sans-serif;
 }
 
-.wiki-container h1 {
+.page-container h1 {
 	font-size: 32px;
 	color: #009fd9;
 	margin: 0 0 12px 0;
 	padding-top: 5px;
 }
 
-.wiki-container h2 {
+.page-container h2 {
 	font-size: 24px;
 	color: #333;
 	margin: 20px 0 10px 0;
@@ -25,21 +25,21 @@
 	padding-bottom: 4px;
 }
 
-.wiki-container h3 {
+.page-container h3 {
 	font-size: 20px;
 	color: #444;
 	margin: 0;
 }
 
-.wiki-container ul {
+.page-container ul {
 	line-height: 1.6;
 }
 
-.wiki-container a {
+.page-container a {
 	color: #009fd9;
 	text-decoration: none;
 }
 
-.wiki-container a:hover {
+.page-container a:hover {
 	text-decoration: underline;
 }

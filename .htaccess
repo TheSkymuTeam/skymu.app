@@ -6,14 +6,16 @@ RewriteCond %{HTTP_HOST} !^www\. [NC]
 RewriteCond %{HTTP_HOST} !^localhost [NC]
 RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
 
+# Handle the root
+RewriteRule ^$ router.php [L,QSA]
+
 # Shortlinks
-RewriteRule ^wiki(/.*)?$ $1 [R=301,L]
 RewriteRule ^(d|discord)/?$ https://discord.gg/kKpeKrzWbr [R=301,L]
 RewriteRule ^(r|repo|repository|gh|github)/?$ https://github.com/TheSkymuTeam/Skymu [R=301,L]
 RewriteRule ^(dn|donate|kofi|chest)/?$ /donations [R=301,L]
 RewriteRule ^(d|download|get|windows)/?$ https://github.com/TheSkymuTeam/Skymu/releases/latest/download/Skymu.Installer.exe [R=301,L]
 RewriteRule ^(b|beta|nightly|based)/?$ https://nightly.link/TheSkymuTeam/Skymu/workflows/ci-build/master/beta-build.zip [R=301,L]
-RewriteRule ^(c|contact)/?$ /contact [R=301,L]
+RewriteRule ^(c)/?$ /contact [R=301,L]
 RewriteRule ^(u|users|directory)/?$ https://skymu.kier.ovh/users [R=301,L]
 RewriteRule ^(sa|skyaeris)/?$ https://archive.org/details/skyaeris [R=301,L]
 RewriteRule ^(o|omega)/?$ https://omegaaol.github.io [R=301,L]
@@ -31,6 +33,7 @@ RewriteRule ^legal/privacy/?$ /privacy [L]
 RewriteRule ^ecs/config/v1/[^/]+/[^/]+$ /ecs/8.200.0.1147.json [L]
 
 # Misc. previous URLs
+RewriteRule ^wiki(/.*)?$ $1 [R=301,L]
 RewriteRule ^skypehome/.*$ /home [R=301,L]
 RewriteRule ^rewrite/?$ / [R=301,L]
 RewriteRule ^skyaeris/information\.txt/?$ https://archive.org/details/skyaeris [R=301,L]
@@ -41,19 +44,19 @@ RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
 # Everything else goes to the router
-RewriteRule ^ router.php [L,QSA]
+RewriteRule . router.php [L,QSA]
 
 # HTTP error redirects
-ErrorDocument 400 /error.php
-ErrorDocument 401 /error.php
-ErrorDocument 403 /error.php
-ErrorDocument 404 /error.php
-ErrorDocument 405 /error.php
-ErrorDocument 408 /error.php
-ErrorDocument 410 /error.php
-ErrorDocument 429 /error.php
-ErrorDocument 500 /error.php
-ErrorDocument 501 /error.php
-ErrorDocument 502 /error.php
-ErrorDocument 503 /error.php
-ErrorDocument 504 /error.php
+ErrorDocument 400 error.php
+ErrorDocument 401 error.php
+ErrorDocument 403 error.php
+ErrorDocument 404 error.php
+ErrorDocument 405 error.php
+ErrorDocument 408 error.php
+ErrorDocument 410 error.php
+ErrorDocument 429 error.php
+ErrorDocument 500 error.php
+ErrorDocument 501 error.php
+ErrorDocument 502 error.php
+ErrorDocument 503 error.php
+ErrorDocument 504 error.php

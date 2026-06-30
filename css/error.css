@@ -41,7 +41,7 @@ body {
 }
 
     #header .main-wrapper {
-        background: url('../images/backgrounds/error-header.png') left top no-repeat;
+        background: url('../images/error-background.png') left top no-repeat;
         height: 374px;
         position: relative;
     }
