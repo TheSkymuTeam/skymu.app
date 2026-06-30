@@ -4,11 +4,12 @@
 {{ page }}
 {% endblock %}
 
-{% block content %}
-
+{% block head %}
 <link rel="stylesheet" href="/css/page.css">
+{% endblock %}
+
+{% block content %}
 <div id="page-content" class="page-container">
 {{ content|raw }}
 </div>
-
 {% endblock %}
