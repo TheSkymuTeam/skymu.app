@@ -9,8 +9,9 @@
       <meta name="robots" content="noodp">
       <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
       <link rel="icon" type="image/png" href="images/favicon.png">
-      <title>Skymu</title>
       <link rel="stylesheet" href="css/main.css">
+	  {% block head %}{% endblock %}
+	  <title>{% block title %}Skymu{% endblock %}</title>
    </head>
    <body>
       <!-- top navigation -->
