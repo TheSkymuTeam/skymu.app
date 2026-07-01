@@ -3,15 +3,27 @@
 <html lang="en">
    <head>
       <base href="/">
+      <title>{% block title %}Skymu{% endblock %}</title>
+
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-      <meta name="description" content="A messaging client styled after classic versions of Skype while also supporting multiple different protocols and platforms using modern technologies.">
-      <meta name="keywords" content="pidgin, skymu, skype, skype revival, skype 2026, classic skype, discord client, skype databases, main.db, miranda ng">
-      <meta name="robots" content="noodp">
+      <meta name="description" content="A modern, open-source messaging client styled after classic versions of Skype. It supports multiple messaging protocols and services, including Discord, Matrix, and Tox.">
+      <meta name="keywords" content="pidgin, skymu, skype, skype revival, skype 2026, classic skype, 
+      discord client, skype databases, main.db, miranda ng, libpurple">
+      <meta name="robots" content="index,follow">
+
       <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
       <link rel="icon" type="image/png" href="images/favicon.png">
       <link rel="stylesheet" href="css/main.css">
-	  {% block head %}{% endblock %}
-	  <title>{% block title %}Skymu{% endblock %}</title>
+      {% block head %}{% endblock %}
+
+      <meta property="og:type" content="website">
+      <meta property="og:title" content="Skymu">
+      <meta property="og:description" content="A modern, open-source messaging client styled after classic versions of Skype. It supports multiple messaging protocols and services, including Discord, Matrix, and Tox.">
+      <meta property="og:url" content="https://skymu.app">
+      <meta property="og:image" content="images/opengraph.png">
+      <meta property="og:image:width" content="1594">
+      <meta property="og:image:height" content="1008">
+	 
    </head>
    <body>
       <!-- top navigation -->
