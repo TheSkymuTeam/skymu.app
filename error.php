@@ -50,18 +50,18 @@ if (isset($statuses[$code])) {
 
 http_response_code($code);
 ?>
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
 <head>
-    <title><?= htmlspecialchars("$code - $title") ?></title>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="/css/error.css">
+    <title><?= htmlspecialchars($title) ?></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/error.css">
 </head>
 <body>
     <div id="header">
         <div class="main-wrapper notfound">
             <a href="/" class="logo"></a>
-
             <h2 class="text"><?= htmlspecialchars($message) ?></h2>
             <h2 class="link">Error <?= $code ?></h2>
         </div>
