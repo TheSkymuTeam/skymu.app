@@ -132,6 +132,7 @@ a:active {
 	width: 200px;
 	font-size: 14px;
 	vertical-align: middle;
+        margin: 0 5px; 
 }
 
 /* searchbar */
