@@ -13,6 +13,15 @@ $twig = new Environment($loader, [
     "cache" => false
 ]);
 
+$style = null;
+if (isset($_GET["style"]) && is_string($_GET["style"])
+    && preg_match('/^[A-Za-z0-9_-]+$/', $_GET["style"])
+    && is_file(__DIR__ . "/css/" . $_GET["style"] . ".css"))
+{
+    $style = $_GET["style"];
+}
+$twig->addGlobal("style", $style);
+
 $markdown = new CommonMarkConverter();
 
 $path = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);

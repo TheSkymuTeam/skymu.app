@@ -8,6 +8,8 @@ Yggdrasil is the plugin interface library for Skymu. It replaces the older Middl
 
 The library is distributed as a single DLL called `Yggdrasil.dll`. Your plugin references it as a dependency, but you do not need to ship it alongside your compiled plugin. Skymu provides its own copy at runtime and uses it to load and talk to your plugin. This means that if the version of Yggdrasil bundled with Skymu changes, your plugin will automatically benefit from any fixes or improvements, as long as the interface signatures remain compatible.
 
+Yggdrasil is separate software by © OmegaAOL and licensed under the Apache License 2.0. This means you can use the library in propietary or closed-source projects without any distribution requirements, which is extremely useful for corporate scenarios.
+
 ## Namespaces
 
 Yggdrasil is split across several namespaces, each with a specific purpose. You will import whichever ones your plugin needs.

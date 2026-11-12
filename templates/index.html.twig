@@ -25,9 +25,9 @@ Skymu
          <div id="searchbar-inner">
             <h3>Search for other people on Skymu</h3>
             <p>Skymu connects to multiple popular messaging platforms. Search through a list of everybody connected to Skymu, on any platform, at any given time.</p>
-            <form class="searchbox-form" action="directory" method="get" accept-charset="UTF-8">
-               <input class="directory-textbox" type="text" name="username" maxlength="100" value="">
-               <input class="directory-button" type="submit" value="Search the directory">
+            <form class="searchbox-form" onsubmit="location.href='/userver/search?q=' + encodeURIComponent(this.username.value); return false;">
+                <input class="directory-textbox" type="text" name="username" maxlength="100" value="">
+                <input class="directory-button" type="submit" value="Search the directory">
             </form>
          </div>
       </div>
@@ -68,7 +68,7 @@ Skymu
             </div>
             <div class="feature-block">
                <h3><a href="repository">Fully open-source</a></h3>
-               <p>The Skymu application, plugins, API, additional compoents, and even this very website are completely open-source, licensed under the AGPLv3. Anyone can contribute to the source code and improve Skymu; yes, even you!</p>
+               <p>The Skymu application, plugins, API, additional compoents, and even this very website are completely open-source, licensed under the Apache License 2.0. The Yggdrasil API and Bifrost networking library are LGPL 2.1 licensed. Anyone can contribute to the source code and improve Skymu; yes, even you!</p>
             </div>
          </div>
 		 

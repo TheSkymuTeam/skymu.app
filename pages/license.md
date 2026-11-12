@@ -1,6 +1,10 @@
 # GNU Affero General Public License
 
-The copyright holders of all Skymu-specific code and assets in this project grant you access subject to the terms of the GNU Affero General Public License, which governs your use and distribution of those materials. This license does not extend to any Skype-branded assets present in certain distributions of this project. Those assets are the property of Microsoft Corporation and are employed under the doctrine of fair use.
+The copyright holders of all Skymu-specific code and assets in this project grant you access subject to the terms of the GNU Affero General Public License, which governs your use and distribution of those materials. 
+
+This license does not extend to any Skype-branded assets present in certain distributions of this project. Those assets are the property of Microsoft Corporation and are employed under the doctrine of fair use. 
+
+Be reminded that Yggdrasil and Bifrost are licensed under the more permissive Apache 2.0 license. This just applies to the Skymu project, official plugins and tests.
 
 Version 3, 19 November 2007
 

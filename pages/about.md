@@ -1,4 +1,4 @@
-# About Skymu (and frequently-asked questions)
+# About Skymu and FAQ
 
 We get a lot of questions, and we got a lot of answers. Learn all about it!
 
