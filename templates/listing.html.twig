@@ -1,0 +1,44 @@
+{% extends "page.html.twig" %}
+
+{% set page = "Index of " ~ path %}
+{% set show_dates = show_modified is not defined or show_modified %}
+
+{% set content %}
+<h1>Index of {{ path }}</h1>
+
+<p id="breadcrumbs">
+  {% for crumb in crumbs %}
+    {% if not loop.last %}<a href="{{ crumb.href }}">{{ crumb.name }}</a> / {% else %}{{ crumb.name }}{% endif %}
+  {% endfor %}
+</p>
+
+<table id="listing">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Size</th>
+	  {% if show_dates %}<th>Last modified</th>{% endif %}
+    </tr>
+  </thead>
+  <tbody>
+    {% if parent %}
+    <tr>
+      <td><a href="{{ parent }}">&larr; Parent directory</a></td>
+      <td>-</td>
+      {% if show_dates %}<td></td>{% endif %}
+    </tr>
+    {% endif %}
+    {% for e in entries %}
+    <tr class="{{ e.is_dir ? 'dir' : 'file' }}">
+      <td><a href="{{ e.href }}">{{ e.name }}{{ e.is_dir ? '/' : '' }}</a></td>
+      <td>{{ e.size }}</td>
+      {% if show_dates %}<td>{{ e.modified }}</td>{% endif %}
+    </tr>
+    {% else %}
+    <tr>
+      <td colspan="3">This folder is empty.</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endset %}

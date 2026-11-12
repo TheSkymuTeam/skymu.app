@@ -1,0 +1,284 @@
+/* Skymu Mobile Responsive Styles */
+
+@media screen and (max-width: 768px) {
+
+	/* general */
+	html,
+	body {
+		width: 100%;
+		overflow-x: hidden;
+	}
+
+	/* page layout */
+	body {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: auto auto auto 1fr auto auto;
+		font-size: 15px;
+		padding-top: 0;
+	}
+
+	#wrap {
+		grid-row: 5;
+		width: auto;
+		max-width: none;
+		padding: 15px;
+		margin: 0;
+	}
+
+	#topnav,
+	main {
+		display: contents;
+	}
+
+	/* logo bar */
+	#logo {
+		grid-row: 1;
+		grid-column: 1;
+		position: relative;
+		left: auto;
+		top: auto;
+		display: block;
+		width: 100%;
+		height: 36px;
+		min-height: 36px;
+		max-height: 36px;
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		line-height: 36px;
+		text-align: center;
+		background: #222 url("../images/header.png") repeat-x;
+	}
+
+	#logo img {
+		display: inline-block;
+		position: relative;
+		vertical-align: middle;
+		width: auto;
+		height: auto;
+		max-width: none;
+		max-height: none;
+		margin: 0;
+	}
+
+	/* hero */
+	#hero {
+		grid-row: 2;
+		padding: 30px 15px;
+	}
+
+	#hero-inner {
+		width: 100%;
+	}
+
+	#hero h1 {
+		font-size: 25px;
+		line-height: 1.3;
+		margin-bottom: 12px;
+	}
+
+	#hero p {
+		font-size: 15px;
+		margin-bottom: 18px;
+	}
+
+	#hero img {
+		max-width: 100%;
+		height: auto;
+		margin: 15px auto;
+	}
+
+	.hero-button {
+		display: block;
+		width: 100%;
+		max-width: 280px;
+		height: 42px;
+		margin: 8px auto;
+		font-size: 14px;
+	}
+
+	/* navigation links (between hero and search) */
+	#topnav-inner {
+		grid-row: 3;
+		display: block;
+		width: 100%;
+		padding: 0;
+		background: #222;
+	}
+
+	#topnav ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	#topnav li {
+		display: block;
+		border-top: 1px solid #444;
+	}
+
+	#topnav li a {
+		display: block;
+		box-sizing: border-box;
+		width: 100%;
+		height: auto;
+		padding: 10px 15px;
+		line-height: 24px;
+		font-size: 14px;
+		text-align: center;
+	}
+
+	#topnav li a:hover {
+		background: #333;
+		color: #66ccff;
+	}
+
+	/* searchbar */
+	#searchbar {
+		grid-row: 4;
+		padding: 15px;
+		box-sizing: border-box;
+	}
+
+	#searchbar-inner {
+		width: 100%;
+	}
+
+	#searchbar h3 {
+		font-size: 16px;
+	}
+
+	#searchbar form {
+		width: 100%;
+	}
+
+	.directory-textbox {
+		display: block;
+		box-sizing: border-box;
+		width: 100%;
+		height: 38px;
+		margin: 8px 0;
+	}
+
+	.directory-button {
+		display: block;
+		box-sizing: border-box;
+		width: 100%;
+		height: 38px;
+		margin: 8px 0 0 0;
+		font-size: 14px;
+	}
+
+	/* headings */
+	h2 {
+		font-size: 20px;
+		margin-top: 28px;
+	}
+
+	h3 {
+		font-size: 17px;
+	}
+
+	/* features */
+	.features {
+		margin: 15px 0;
+	}
+
+	.feature-block {
+		margin-bottom: 20px;
+		padding-bottom: 15px;
+	}
+
+	/* notices */
+	.notice {
+		padding: 12px;
+		margin: 18px 0;
+		font-size: 13px;
+	}
+
+	/* tutorials */
+	.tuts {
+		padding-left: 22px;
+	}
+
+	/* footer */
+	#footer {
+		grid-row: 6;
+		display: block;
+		width: 100%;
+		padding: 15px;
+		text-align: center;
+	}
+
+	#footer strong {
+		display: block;
+		margin-bottom: 10px;
+	}
+
+	#footer-badges {
+		display: block;
+		text-align: center;
+	}
+
+	#footer-badges img {
+		margin: 4px;
+		max-width: 100%;
+		height: auto;
+	}
+
+	/* copyright */
+	#copyright {
+		padding: 12px 15px;
+		font-size: 11px;
+		box-sizing: border-box;
+	}
+
+	/* page content */
+	.page-container {
+		width: auto;
+		margin: 0 10px 15px 10px;
+		padding: 15px;
+	}
+
+	.page-container h1 {
+		font-size: 26px;
+	}
+
+	.page-container h2 {
+		font-size: 21px;
+	}
+
+	.page-container h3 {
+		font-size: 18px;
+	}
+
+	.page-container img {
+		max-width: 100%;
+		height: auto;
+	}
+
+}
+
+/* smaller phones */
+@media screen and (max-width: 400px) {
+
+	#hero {
+		padding: 25px 12px;
+	}
+
+	#hero h1 {
+		font-size: 22px;
+	}
+
+	#wrap {
+		padding: 12px;
+	}
+
+	.page-container {
+		margin-left: 5px;
+		margin-right: 5px;
+		padding: 12px;
+	}
+
+}
